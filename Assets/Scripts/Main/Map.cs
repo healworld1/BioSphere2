@@ -37,6 +37,10 @@ public class Map : MonoBehaviour {
         {
             selector.gameObject.SetActive(true);
         }
+        if (buildings[map.x, -map.y] != null)
+        {
+            return;
+        }
         if (Input.GetMouseButtonUp(0))
         {
             buildings[map.x, -map.y] = Instantiate(building,transform.GetChild(0));

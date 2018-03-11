@@ -61,6 +61,10 @@ public class Updater : MonoBehaviour {
             
             GetComponent<InitialCity>().Money += 1000;
             GetComponent<InitialCity>().UpdateStats();
+            if (GetComponent<InitialCity>().WinElection())
+            {
+
+            }
         }
     }
 }
