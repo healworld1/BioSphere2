@@ -58,9 +58,9 @@ public class Updater : MonoBehaviour {
         {
            
             yield return new WaitForSeconds(10);
-            GetComponent<InitialCity>().UpdateStats();
+            
             GetComponent<InitialCity>().Money += 1000;
-
+            GetComponent<InitialCity>().UpdateStats();
         }
     }
 }

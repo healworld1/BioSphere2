@@ -166,10 +166,10 @@ public class InitialCity : MonoBehaviour
         header.transform.Find("Money").GetComponent<Text>().text = "Money: " + Money;
         header.transform.Find("Energy").GetComponent<Text>().text = "Energy: " + Energy;
         header.transform.Find("Health").GetComponent<Text>().text = "Health: " + Health;
-        header.transform.Find("Population").GetComponent<Text>().text = "Population: " + Health;
-        header.transform.Find("Environment").GetComponent<Text>().text = "Environment: " + Health;
-        header.transform.Find("AvaailableSpace").GetComponent<Text>().text = "Space: " + Health;
-        header.transform.Find("Trafffic").GetComponent<Text>().text = "Traffic: " + Health;
-        header.transform.Find("Happiness").GetComponent<Text>().text = "Happiness: " + Health;
+        header.transform.Find("Population").GetComponent<Text>().text = "Pop: " + Population;
+        header.transform.Find("Environment").GetComponent<Text>().text = "Env: " + Environment;
+        header.transform.Find("AvailableSpace").GetComponent<Text>().text = "Space: " + Space;
+        header.transform.Find("Traffic").GetComponent<Text>().text = "Traffic: " + Traffic;
+        header.transform.Find("Happiness").GetComponent<Text>().text = "Happiness: " + Happiness();
     }
 }

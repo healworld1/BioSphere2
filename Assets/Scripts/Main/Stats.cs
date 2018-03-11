@@ -28,7 +28,7 @@ public class Stats : MonoBehaviour{
 			{ Metric.money, 500 }, 
 			{ Metric.happiness, 25 }
 		};
-        print(stats[Metric.money]);
+        print(stats[Metric.availableSpace]);
 	}
 
 	public static void AddTo(Metric metric, int num) {
