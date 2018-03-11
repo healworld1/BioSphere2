@@ -86,7 +86,7 @@ public class InitialCity : MonoBehaviour
         }
     }
 
-    float due = 100;
+    float due = 1;
 
     public double Happiness()
     {
@@ -136,7 +136,7 @@ public class InitialCity : MonoBehaviour
 
     public bool WinElection()
     {
-        due += 100;
+        due += 1;
         return Happiness() > due;
     }
 
