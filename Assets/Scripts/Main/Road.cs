@@ -5,6 +5,14 @@ using UnityEngine;
 public class Road : Building
 {
     public int Traffic { get; private set; }
+    public override void Build()
+    {
+        Stats.AddTo(Stats.Metric.money, -200);
+        Stats.AddTo(Stats.Metric.traffic, 10);
+        Stats.AddTo(Stats.Metric.availableSpace, -2);
+        Stats.AddTo(Stats.Metric.energy, -50);
+        base.Build();
+    }
     public void Start()
     {
         Money = -200;
