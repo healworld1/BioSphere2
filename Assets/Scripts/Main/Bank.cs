@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bank : Building
 {
-    public int Traffic { get; private set; }
     public int Population { get; private set; }
     public override void Build()
     {

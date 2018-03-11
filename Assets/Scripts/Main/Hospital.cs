@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Hospital: Building
 {
-    public int Traffic { get; private set; }
-    public int Population { get; private set; }
-    public int Health { get; private set; }
+    public static int Population { get; private set; }
+    public static int Health { get; private set; }
     public override void Build()
     {
         Stats.AddTo(Stats.Metric.money, -500);

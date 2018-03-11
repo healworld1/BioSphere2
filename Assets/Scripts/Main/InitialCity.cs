@@ -102,29 +102,29 @@ public class InitialCity : MonoBehaviour {
         {
             if (key.GetType() == typeof(Bank))
             {
-                Traffic += buildingList[key] * ((Bank)key).Traffic;
+                Traffic += buildingList[key] * Bank.Traffic;
             }
             if (key.GetType() == typeof(Factory))
             {
-                Traffic += buildingList[key] * ((Factory)key).Traffic;
+                Traffic += buildingList[key] * Factory.Traffic;
             }
             if (key.GetType() == typeof(Hospital))
             {
-                Traffic += buildingList[key] * ((Hospital)key).Traffic;
-                Health += buildingList[key] * ((Hospital)key).Health;
+                Traffic += buildingList[key] * Hospital.Traffic;
+                Health += buildingList[key] * Hospital.Health;
             }
             if (key.GetType() == typeof(Park))
             {
-                Traffic += buildingList[key] * ((Park)key).Traffic;
-                Health += buildingList[key] * ((Park)key).Health;
+                Traffic += buildingList[key] * Park.Traffic;
+                Health += buildingList[key] * Park.Health;
             }
             if (key.GetType() == typeof(Road))
             {
-                Traffic += buildingList[key] * ((Road)key).Traffic;
+                Traffic += buildingList[key] * Road.Traffic;
             }
             if (key.GetType() == typeof(House))
             {
-                Traffic += buildingList[key] * ((House)key).Traffic;
+                Traffic += buildingList[key] * House.Traffic;
             }
 
         }

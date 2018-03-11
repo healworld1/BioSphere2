@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Factory : Building {
-    public int Traffic { get; private set; }
     public int Population { get; private set; }
 
     public override void Build()

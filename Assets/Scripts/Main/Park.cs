@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Park : Building {
-    public int Traffic { get; private set; }
 
-    public int Population { get; private set; }
-    public int Happiness { get; private set; }
-    public int Health { get; private set; }
+    public static int Population { get; private set; }
+    public static int Happiness { get; private set; }
+    public static int Health { get; private set; }
 
     public override void Build()
     {

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Road : Building
 {
-    public int Traffic { get; private set; }
     public override void Build()
     {
         Stats.AddTo(Stats.Metric.money, -200);

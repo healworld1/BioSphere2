@@ -13,7 +13,6 @@ public class House : Building
         Stats.AddTo(Stats.Metric.population, 8);
         base.Build();
     }
-    public int Traffic { get; private set; }
     public int Population { get; private set; }
     public void Start()
     {
