@@ -131,13 +131,13 @@ public class InitialCity : MonoBehaviour
             }
 
         }
-        return Health * 0.2 + Environment * 0.2 - 0.1 * Traffic;
+        return (Health * 0.2 + Environment * 0.2 - 0.1 * Traffic) - due;
     }
 
     public bool WinElection()
     {
         due += 1;
-        return Happiness() > due;
+        return Happiness() > 0;
     }
 
     // Use this for initialization
