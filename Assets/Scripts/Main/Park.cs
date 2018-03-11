@@ -17,6 +17,7 @@ public class Park : Building {
         Stats.AddTo(Stats.Metric.population, 7);
         Stats.AddTo(Stats.Metric.happiness, 5);
         Stats.AddTo(Stats.Metric.health, 3);
+        Stats.AddTo(Stats.Metric.environment, 5);
         base.Build();
     }
 
