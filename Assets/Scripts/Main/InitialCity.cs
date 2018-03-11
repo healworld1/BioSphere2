@@ -1,12 +1,15 @@
-﻿using System;
+﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InitialCity : MonoBehaviour {
+public class InitialCity : MonoBehaviour
+{
     public Dictionary<Type, int> buildingList;
-    public int Energy {
+    public int Energy
+    {
         get
         {
             return Stats.stats[Stats.Metric.energy];
@@ -163,5 +166,10 @@ public class InitialCity : MonoBehaviour {
         header.transform.Find("Money").GetComponent<Text>().text = "Money: " + Money;
         header.transform.Find("Energy").GetComponent<Text>().text = "Energy: " + Energy;
         header.transform.Find("Health").GetComponent<Text>().text = "Health: " + Health;
+        header.transform.Find("Population").GetComponent<Text>().text = "Population: " + Health;
+        header.transform.Find("Environment").GetComponent<Text>().text = "Environment: " + Health;
+        header.transform.Find("AvaailableSpace").GetComponent<Text>().text = "Space: " + Health;
+        header.transform.Find("Trafffic").GetComponent<Text>().text = "Traffic: " + Health;
+        header.transform.Find("Happiness").GetComponent<Text>().text = "Happiness: " + Health;
     }
 }
