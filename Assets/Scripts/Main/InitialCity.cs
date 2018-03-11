@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InitialCity : MonoBehaviour {
-    Dictionary<Building, int> buildingList;
+    public Dictionary<Type, int> buildingList;
     public int Energy {
         get
         {
@@ -97,7 +98,7 @@ public class InitialCity : MonoBehaviour {
     {
 
 
-        foreach (Building key in buildingList.Keys)
+        foreach (Type key in buildingList.Keys)
         {
             if (key.GetType() == typeof(Bank))
             {
@@ -121,6 +122,10 @@ public class InitialCity : MonoBehaviour {
             {
                 Traffic += buildingList[key] * ((Road)key).Traffic;
             }
+            if (key.GetType() == typeof(House))
+            {
+                Traffic += buildingList[key] * ((House)key).Traffic;
+            }
 
         }
         return Health * 0.2 + Environment * 0.2 - 0.1 * Traffic;
@@ -135,7 +140,15 @@ public class InitialCity : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        buildingList = new Dictionary<Building, int>();
+        buildingList = new Dictionary<Type, int>
+        {
+            { typeof(Bank), 0 },
+            { typeof(Factory), 0 },
+            { typeof(Hospital), 0 },
+            { typeof(Park), 0 },
+            { typeof(Road), 0 },
+            { typeof(House), 0 }
+        };
     }
 
     // Update is called once per frame

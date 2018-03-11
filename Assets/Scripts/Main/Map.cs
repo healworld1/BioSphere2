@@ -44,7 +44,11 @@ public class Map : MonoBehaviour {
             Color selectorColor = transform.GetChild(1).GetComponent<Image>().color;
             selectorColor.a = 1;
             buildings[map.x, -map.y].GetComponent<Image>().color = selectorColor;
-            transform.parent.GetComponent<Updater>().currentBuild.Build();
+            Transform parent = transform.parent;
+            parent.GetComponent<Updater>().currentBuild.Build();
+
+            parent.GetComponent<InitialCity>().buildingList[(parent.GetComponent<Updater>().currentBuild).GetType()] += 1;
+
             return;
         } else
         {
