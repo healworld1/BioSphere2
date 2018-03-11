@@ -24,7 +24,7 @@ public class InitialCity : MonoBehaviour {
         }
         set
         {
-            Stats.Set(Stats.Metric.energy, value);
+            Stats.Set(Stats.Metric.money, value);
         }
     }
     public int Space
@@ -35,7 +35,7 @@ public class InitialCity : MonoBehaviour {
         }
         set
         {
-            Stats.Set(Stats.Metric.energy, value);
+            Stats.Set(Stats.Metric.availableSpace, value);
         }
     }
     public int Traffic
@@ -46,7 +46,7 @@ public class InitialCity : MonoBehaviour {
         }
         set
         {
-            Stats.Set(Stats.Metric.energy, value);
+            Stats.Set(Stats.Metric.traffic, value);
         }
     }
     public int Health
@@ -57,7 +57,7 @@ public class InitialCity : MonoBehaviour {
         }
         set
         {
-            Stats.Set(Stats.Metric.energy, value);
+            Stats.Set(Stats.Metric.health, value);
         }
     }
     public int Environment
@@ -68,7 +68,7 @@ public class InitialCity : MonoBehaviour {
         }
         set
         {
-            Stats.Set(Stats.Metric.energy, value);
+            Stats.Set(Stats.Metric.environment, value);
         }
     }
     public int Population
@@ -79,7 +79,7 @@ public class InitialCity : MonoBehaviour {
         }
         set
         {
-            Stats.Set(Stats.Metric.energy, value);
+            Stats.Set(Stats.Metric.population, value);
         }
     }
 

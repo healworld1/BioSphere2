@@ -17,6 +17,7 @@ public class Stats : MonoBehaviour{
 
 	// Use this for initialization
 	void Start () {
+        
 		stats = new Dictionary<Metric, int> () {
 			{ Metric.energy, 50 }, 
 			{ Metric.availableSpace, 100 }, 
@@ -26,7 +27,8 @@ public class Stats : MonoBehaviour{
 			{ Metric.population, 1 }, 
 			{ Metric.money, 500 }, 
 			{ Metric.happiness, 25 }
-		}; 
+		};
+        print(stats[Metric.money]);
 	}
 
 	public static void AddTo(Metric metric, int num) {

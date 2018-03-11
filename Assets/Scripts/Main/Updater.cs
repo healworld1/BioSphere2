@@ -25,7 +25,7 @@ public class Updater : MonoBehaviour {
         eventScreen = transform.Find("Event").gameObject;
         map = transform.Find("Map").gameObject;
         eventScreen.SetActive(false);
-        //StartCoroutine(TestingEvent());
+        StartCoroutine(IncomeCycle());
 	}
 	
 	// Update is called once per frame
@@ -51,5 +51,16 @@ public class Updater : MonoBehaviour {
         Option o4 = new Option("testing 4", "Money");
         eventScreen.GetComponent<Event>().NewEvent("we are now testing", new Option[4] { o1, o2, o3, o4});
         eventScreen.SetActive(true);
+    }
+    IEnumerator IncomeCycle()
+    {
+        while (true)
+        {
+           
+            yield return new WaitForSeconds(10);
+            GetComponent<InitialCity>().UpdateStats();
+            GetComponent<InitialCity>().Money += 1000;
+
+        }
     }
 }
