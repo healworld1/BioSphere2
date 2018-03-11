@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Option : MonoBehaviour {
 
-    // Use this for initialization
+    //Options for events, not yet implemented really
     public string Name { get; private set; }
     public string[] Types { get; private set; }
 

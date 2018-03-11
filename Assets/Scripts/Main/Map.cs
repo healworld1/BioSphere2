@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Map : MonoBehaviour {
     public GameObject building;
-    // Use this for initialization
+
     Vector3[] corners = new Vector3[4];
     GameObject[,] buildings = new GameObject[10, 10];
     Transform selector;
@@ -16,7 +16,7 @@ public class Map : MonoBehaviour {
         GetComponent<RectTransform>().GetWorldCorners(corners);
     }
 	
-	// Update is called once per frame
+
 	void Update () {
         if (parent.GetComponent<Updater>().EventShown)
         {

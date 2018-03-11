@@ -15,7 +15,6 @@ public class Stats : MonoBehaviour{
 		happiness
 	}
 
-	// Use this for initialization
 	void Start () {
         
 		stats = new Dictionary<Metric, int> () {
@@ -36,8 +35,7 @@ public class Stats : MonoBehaviour{
         {
             return false;
         }
-        //print(stats[metric]);
-        //print(num);
+
         stats[metric] += num;
         return true;
 
@@ -45,24 +43,5 @@ public class Stats : MonoBehaviour{
 
 	public static void Set(Metric metric, int num) {
 		stats [metric] = num; 
-	}
-
-	public static string SerializeText()
-	{
-		string str = "Energy: " + stats [Metric.energy] +
-		    "\tSpace: " + stats [Metric.availableSpace] +
-			"\tTraffic: " + stats [Metric.traffic] +
-			"\tHealth: " + stats [Metric.health] +
-			"\tEnvironment: " + stats [Metric.environment] +
-			"\tPopulation: " + stats [Metric.population] +
-			"\tMoney: " + stats [Metric.money] +
-			"\tHappiness: " + stats [Metric.happiness]; 
-
-		return str; 
-	}
-
-	// Update is called once per frame
-	static void Update () {
-		
 	}
 }
