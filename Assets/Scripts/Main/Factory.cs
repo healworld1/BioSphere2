@@ -7,8 +7,8 @@ public class Factory : Building {
 
     public override void Build()
     {
-        Stats.AddTo(Stats.Metric.money, -500);
-        Stats.AddTo(Stats.Metric.traffic, -10);
+        Stats.AddTo(Stats.Metric.money, 500);
+        Stats.AddTo(Stats.Metric.traffic, 13);
         Stats.AddTo(Stats.Metric.availableSpace, -1);
         Stats.AddTo(Stats.Metric.energy, -10);
         Stats.AddTo(Stats.Metric.population, 10);
@@ -18,7 +18,7 @@ public class Factory : Building {
     public void Start()
     {
         Money = -500;
-        Traffic = -10;
+        Traffic = 13;
         AvailableSpace = -1;
         Energy = 10;
         Population = 10;

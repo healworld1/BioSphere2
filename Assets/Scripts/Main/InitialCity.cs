@@ -91,9 +91,9 @@ public class InitialCity : MonoBehaviour
     public double Happiness()
     {
         return (
-            Stats.stats[Stats.Metric.health] * 0.2 +
-            Stats.stats[Stats.Metric.environment] * 0.2 -
-            Stats.stats[Stats.Metric.traffic] * -0.1);
+            Stats.stats[Stats.Metric.health] * 1.5 +
+            Stats.stats[Stats.Metric.environment] * 3 +
+            Stats.stats[Stats.Metric.traffic] * -1.1);
 
         // TO-DO click a building, add to dictionary
     }
