@@ -9,16 +9,16 @@ public class Map : MonoBehaviour {
     Vector3[] corners = new Vector3[4];
     GameObject[,] buildings = new GameObject[10, 10];
     Transform selector;
-
+    Transform parent;
     void Start () {
         selector = transform.GetChild(1);
-
+        parent = transform.parent;
         GetComponent<RectTransform>().GetWorldCorners(corners);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (transform.parent.GetComponent<Updater>().EventShown)
+        if (parent.GetComponent<Updater>().EventShown)
         {
             return;
         }
@@ -41,15 +41,20 @@ public class Map : MonoBehaviour {
         {
             return;
         }
+        InitialCity city = parent.GetComponent<InitialCity>();
+        Updater update = parent.GetComponent<Updater>();
+
         if (Input.GetMouseButtonUp(0))
         {
-            buildings[map.x, -map.y] = Instantiate(building,transform.GetChild(0));
+            if (!parent.GetComponent<Updater>().currentBuild.Build())
+            {
+                return;
+            }
+            buildings[map.x, -map.y] = Instantiate(building, transform.GetChild(0));
             buildings[map.x, -map.y].GetComponent<RectTransform>().anchoredPosition = mapPos;
             Color selectorColor = transform.GetChild(1).GetComponent<Image>().color;
             selectorColor.a = 1;
             buildings[map.x, -map.y].GetComponent<Image>().color = selectorColor;
-            Transform parent = transform.parent;
-            parent.GetComponent<Updater>().currentBuild.Build();
 
             parent.GetComponent<InitialCity>().buildingList[(parent.GetComponent<Updater>().currentBuild).GetType()] += 1;
 

@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class Road : Building
 {
-    public override void Build()
+    public override bool Build()
     {
-        Stats.AddTo(Stats.Metric.money, -200);
+        if (!Stats.AddTo(Stats.Metric.money, Money))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.availableSpace, AvailableSpace))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.energy, Energy))
+        {
+            return false;
+        }
         Stats.AddTo(Stats.Metric.traffic, -10);
-        Stats.AddTo(Stats.Metric.availableSpace, -2);
-        Stats.AddTo(Stats.Metric.energy, -50);
-        base.Build();
+
+        return base.Build();
     }
     public void Start()
     {

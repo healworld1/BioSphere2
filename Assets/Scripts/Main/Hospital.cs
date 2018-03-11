@@ -6,15 +6,24 @@ public class Hospital: Building
 {
     public static int Population { get; private set; }
     public static int Health { get; private set; }
-    public override void Build()
+    public override bool Build()
     {
-        Stats.AddTo(Stats.Metric.money, -500);
+        if (!Stats.AddTo(Stats.Metric.money, Money))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.availableSpace, AvailableSpace))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.energy, Energy))
+        {
+            return false;
+        }
         Stats.AddTo(Stats.Metric.traffic, 5);
-        Stats.AddTo(Stats.Metric.availableSpace, -2);
-        Stats.AddTo(Stats.Metric.energy, -40);
         Stats.AddTo(Stats.Metric.population, 3);
         Stats.AddTo(Stats.Metric.health, 10);
-        base.Build();
+        return base.Build();
     }
     public void Start()
     {

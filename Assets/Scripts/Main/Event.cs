@@ -16,7 +16,7 @@ public class Event : MonoBehaviour {
         {
             string itemName = options[i].Name;
             optionText.GetChild(i).GetChild(0).GetComponent<Text>().text = itemName;
-            optionText.GetChild(i).GetComponent<Button>().onClick.AddListener(() => print(itemName));
+            optionText.GetChild(i).GetComponent<Button>().onClick.AddListener(() => gameObject.SetActive(false));
         }
     }
 }

@@ -5,14 +5,23 @@ using UnityEngine;
 public class Factory : Building {
     public int Population { get; private set; }
 
-    public override void Build()
+    public override bool Build()
     {
-        Stats.AddTo(Stats.Metric.money, 500);
+        if (!Stats.AddTo(Stats.Metric.money, Money))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.availableSpace, AvailableSpace))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.energy, Energy))
+        {
+            return false;
+        }
         Stats.AddTo(Stats.Metric.traffic, 13);
-        Stats.AddTo(Stats.Metric.availableSpace, -1);
-        Stats.AddTo(Stats.Metric.energy, -10);
         Stats.AddTo(Stats.Metric.population, 10);
-        base.Build();
+        return base.Build();
     }
 
     public void Start()

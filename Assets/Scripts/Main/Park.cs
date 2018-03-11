@@ -8,17 +8,26 @@ public class Park : Building {
     public static int Happiness { get; private set; }
     public static int Health { get; private set; }
 
-    public override void Build()
+    public override bool Build()
     {
-        Stats.AddTo(Stats.Metric.money, -700);
+        if (!Stats.AddTo(Stats.Metric.money, Money))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.availableSpace, AvailableSpace))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.energy, Energy))
+        {
+            return false;
+        }
         Stats.AddTo(Stats.Metric.traffic, 3);
-        Stats.AddTo(Stats.Metric.availableSpace, -5);
-        Stats.AddTo(Stats.Metric.energy, -10);
         Stats.AddTo(Stats.Metric.population, 7);
         Stats.AddTo(Stats.Metric.happiness, 5);
         Stats.AddTo(Stats.Metric.health, 3);
         Stats.AddTo(Stats.Metric.environment, 5);
-        base.Build();
+        return base.Build();
     }
 
     public void Start()

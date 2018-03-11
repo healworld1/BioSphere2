@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class House : Building
 {
-    public override void Build()
+    public override bool Build()
     {
-        Stats.AddTo(Stats.Metric.money, -200);
+        if (!Stats.AddTo(Stats.Metric.money, Money))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.availableSpace, AvailableSpace))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.energy, Energy))
+        {
+            return false;
+        }
         Stats.AddTo(Stats.Metric.traffic, 7);
-        Stats.AddTo(Stats.Metric.availableSpace, -1);
-        Stats.AddTo(Stats.Metric.energy, -7);
         Stats.AddTo(Stats.Metric.population, 8);
-        base.Build();
+        return base.Build();
     }
     public int Population { get; private set; }
     public void Start()

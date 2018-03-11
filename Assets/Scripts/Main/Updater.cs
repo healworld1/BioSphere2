@@ -15,7 +15,7 @@ public class Updater : MonoBehaviour {
     {
         get
         {
-            return false;
+            return eventScreen.activeSelf;
         }
     }
 
@@ -40,7 +40,8 @@ public class Updater : MonoBehaviour {
         selector.GetComponent<Image>().color = selectorColor;
         currentBuild = build;
     }
-
+    //We didnt get to this either
+    /*
     IEnumerator TestingEvent()
     {
         yield return new WaitForSeconds(1);
@@ -51,7 +52,7 @@ public class Updater : MonoBehaviour {
         Option o4 = new Option("testing 4", "Money");
         eventScreen.GetComponent<Event>().NewEvent("we are now testing", new Option[4] { o1, o2, o3, o4});
         eventScreen.SetActive(true);
-    }
+    }*/
     IEnumerator IncomeCycle()
     {
         while (true)
@@ -63,7 +64,12 @@ public class Updater : MonoBehaviour {
             GetComponent<InitialCity>().UpdateStats();
             if (GetComponent<InitialCity>().WinElection())
             {
-
+                Option o1 = new Option("yay", "");
+                eventScreen.GetComponent<Event>().NewEvent("You win", new Option[1] { o1});
+            } else
+            {
+                Option o1 = new Option(":(", "");
+                eventScreen.GetComponent<Event>().NewEvent("You lose", new Option[1] { o1 });
             }
         }
     }

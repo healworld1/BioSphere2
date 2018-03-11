@@ -5,21 +5,30 @@ using UnityEngine;
 public class Bank : Building
 {
     public int Population { get; private set; }
-    public override void Build()
+    public override bool Build()
     {
-        Stats.AddTo(Stats.Metric.money, 1000);
+        if (!Stats.AddTo(Stats.Metric.money, Money))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.availableSpace, AvailableSpace))
+        {
+            return false;
+        }
+        if (!Stats.AddTo(Stats.Metric.energy, Energy))
+        {
+            return false;
+        }
         Stats.AddTo(Stats.Metric.traffic, 7);
-        Stats.AddTo(Stats.Metric.availableSpace, -2);
-        Stats.AddTo(Stats.Metric.energy, -75);
         Stats.AddTo(Stats.Metric.population, 5);
-        base.Build();
+        return base.Build();
     }
 
     public void Start()
     {
-        Money = -1000;
+        Money = 1000;
         Traffic = 7;
-        AvailableSpace = -1;
+        AvailableSpace = -2;
         Energy = -75;
         Population = 5;
         Color = Color.yellow;

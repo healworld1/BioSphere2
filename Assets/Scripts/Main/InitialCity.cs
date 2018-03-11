@@ -95,9 +95,10 @@ public class InitialCity : MonoBehaviour
             Stats.stats[Stats.Metric.environment] * 1.4 +
             Stats.stats[Stats.Metric.traffic] * -3);
 
-        // TO-DO click a building, add to dictionary
+
     }
-    public double ClacStats()
+    //Sorry, couldnt really get this to work
+    /*public double ClacStats()
     {
 
 
@@ -132,7 +133,7 @@ public class InitialCity : MonoBehaviour
 
         }
         return (Health * 0.2 + Environment * 0.2 - 0.1 * Traffic) - due;
-    }
+    }*/
 
     public bool WinElection()
     {
@@ -152,12 +153,6 @@ public class InitialCity : MonoBehaviour
             { typeof(Road), 0 },
             { typeof(House), 0 }
         };
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void UpdateStats()
